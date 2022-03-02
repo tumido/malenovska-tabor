@@ -40,22 +40,22 @@ const Header = () => {
       <Toolbar variant="dense" disableGutters={true}>
         <GrowingDiv />
         <Stack direction="row" spacing={1.3}>
-          <Link href="#o-akci" passHref>
+          <Link href="/#tabor" passHref>
             <Button component="a" color="primary">
               Tábor
             </Button>
           </Link>
-          <Link href="#o-akci" passHref>
+          <Link href="/#pravidla" passHref>
             <Button component="a" color="primary">
               Pravidla
             </Button>
           </Link>
-          <Link href="#o-akci" passHref>
+          <Link href="/#org-tym" passHref>
             <Button component="a" color="primary">
               Organizátoři
             </Button>
           </Link>
-          <Link href="#registrace" passHref>
+          <Link href="/registrace" passHref>
             <Button component="a" color="primary">
               Registrace
             </Button>

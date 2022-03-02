@@ -114,8 +114,8 @@ export const getDesignTokens = (mode: 'light' | 'dark') =>
       mode,
       ...(mode === 'dark' && {
         background: {
-          default: blueDark[800],
-          // default: '#fff',
+          // default: blueDark[800],
+          default: '#fff',
           paper: blueDark[900],
         },
       }),
@@ -796,6 +796,17 @@ export function getThemedComponents(theme: Theme) {
       MuiCssBaseline: {
         defaultProps: {
           enableColorScheme: true,
+        },
+      },
+      main: {
+        styleOverrides: {
+          root: {
+            backgroundImage: 'url(/bg.png)',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'left top',
+            backgroundSize: '800px auto',
+            width: '100%',
+          },
         },
       },
     },
