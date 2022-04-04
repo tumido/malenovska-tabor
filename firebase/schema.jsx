@@ -22,7 +22,7 @@ export const validationSchema = Yup.object().shape({
   allergies: Yup.string(),
   parent_name: Yup.string()
     .required('Povinný údaj')
-    .min(5, 'Celé jméno musí být určitě delší než 5 znaků'),
+    .minP(5, 'Celé jméno musí být určitě delší než 5 znaků'),
   parent_address: Yup.string().min(
     10,
     'Je velmi velmi nepravděpodobné, že je vaše adresa tak krátká'
