@@ -1,95 +1,43 @@
 import React, { useState } from 'react'
-import { ErrorMessage, Field, Form, Formik, useFormikContext } from 'formik'
+import { Form, Formik, FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 import {
   Step,
   StepContent,
   StepLabel,
   Stepper,
-  Typography,
   Box,
   Button,
-  TextField as MuiTextField,
-  Grid,
 } from '@mui/material'
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+type WizardProps = {
+  children: React.ReactElement[] | React.ReactElement
+  initialValues: object
+  onSubmit: Function
+}
 
-const TextFieldBuilder = (props, sizing) =>
-  function TextField() {
-    const { values, touched, handleChange, errors } = useFormikContext()
-    return (
-      <Grid {...sizing} item>
-        <MuiTextField
-          {...props}
-          value={values[props.id]}
-          onChange={handleChange}
-          error={touched[props[id]] && Boolean(errors[props[id]])}
-          helperText={touched[props[id]] && errors[props[id]]}
-        />
-      </Grid>
-    )
-  }
-
-const DateFieldBuilder = (props, sizing) =>
-  function DateField() {
-    const { values, touched, handleChange, errors } = useFormikContext()
-    return (
-      <Grid {...sizing} item>
-        <DatePicker
-          value={formik.values[i.props.id] || null}
-          {...i.props}
-          clearable
-          mask="__.__.____"
-          onChange={(value) => formik.setFieldValue(i.props.id, value, true)}
-          renderInput={(props) => (
-            <MuiTextField
-              {...props}
-              {...i.renderProps}
-              error={
-                formik.touched[i.props.id] && Boolean(formik.errors[i.props.id])
-              }
-              helperText={
-                formik.touched[i.props.id] && formik.errors[i.props.id]
-              }
-              // required={
-              //   validationSchema.fields[i.props.id].spec.presence ===
-              //   'required'
-              // }
-              // onBlur={() =>
-              //   formik.setFieldTouched(i.props.id, true, true)
-              // }
-            />
-          )}
-        />
-      </Grid>
-    )
-  }
-
-const Wizard = ({ children, initialValues, onSubmit }) => {
+export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
   const [stepNumber, setStepNumber] = useState(0)
-  const steps = React.Children.toArray(children)
+  const steps = React.Children.toArray(children) as React.ReactElement[]
   const [snapshot, setSnapshot] = useState(initialValues)
 
   const step = steps[stepNumber]
   const totalSteps = steps.length
   const isLastStep = stepNumber === totalSteps - 1
 
-  const next = (values) => {
+  const next = (values: object) => {
     setSnapshot(values)
     setStepNumber(Math.min(stepNumber + 1, totalSteps - 1))
   }
 
-  const previous = (values) => {
+  const previous = (values: object) => {
     setSnapshot(values)
     setStepNumber(Math.max(stepNumber - 1, 0))
   }
 
-  const handleSubmit = async (values, bag) => {
-    if (step.props.onSubmit) {
-      await step.props.onSubmit(values, bag)
-    }
+  const handleSubmit = async (values: object, bag: FormikHelpers<object>) => {
     if (isLastStep) {
+      console.log('here')
       return onSubmit(values, bag)
     } else {
       bag.setTouched({})
@@ -101,7 +49,7 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
     <Formik
       initialValues={snapshot}
       onSubmit={handleSubmit}
-      validationSchema={step.props.validation}
+      validationSchema={step.props.validationSchema}
     >
       {(formik) => (
         <Form>
@@ -143,71 +91,11 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
   )
 }
 
-const WizardStep = ({ children }) => children
+type WizardStepProps = {
+  children: React.ReactElement[] | React.ReactElement | null
+  validationSchema: any
+  description: string
+  label: string
+}
 
-const App = () => (
-  <Wizard
-    initialValues={{
-      email: '',
-      firstName: '',
-      lastName: '',
-    }}
-    onSubmit={async (values) =>
-      sleep(300).then(() => console.log('Wizard submit', values))
-    }
-  >
-    <WizardStep
-      onSubmit={() => console.log('Step1 onSubmit')}
-      validation={Yup.object({
-        firstName: Yup.string().required('required'),
-        lastName: Yup.string().required('required'),
-      })}
-    >
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field
-          autoComplete="given-name"
-          component="input"
-          id="firstName"
-          name="firstName"
-          placeholder="First Name"
-          type="text"
-        />
-        <ErrorMessage className="error" component="div" name="firstName" />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field
-          autoComplete="family-name"
-          component="input"
-          id="lastName"
-          name="lastName"
-          placeholder="Last Name"
-          type="text"
-        />
-        <ErrorMessage className="error" component="div" name="lastName" />
-      </div>
-    </WizardStep>
-    <WizardStep
-      onSubmit={() => console.log('Step2 onSubmit')}
-      validation={Yup.object({
-        email: Yup.string().email('Invalid email address').required('required'),
-      })}
-    >
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field
-          autoComplete="email"
-          component="input"
-          id="email"
-          name="email"
-          placeholder="Email"
-          type="text"
-        />
-        <ErrorMessage className="error" component="div" name="email" />
-      </div>
-    </WizardStep>
-  </Wizard>
-)
-
-export default App
+export const WizardStep = ({ children }: WizardStepProps) => <>{children}</>
