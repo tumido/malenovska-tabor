@@ -1,14 +1,20 @@
-import { Typography, Container, MenuItem, Grid, Paper } from '@mui/material'
+import {
+  Typography,
+  Container,
+  MenuItem,
+  Grid,
+  FormHelperText,
+} from '@mui/material'
 import { Wizard, WizardStep } from '../components/Wizard'
-import { TextField, Select, Switch } from 'formik-mui'
+import { TextField, Select, CheckboxWithLabel } from 'formik-mui'
 import { DatePicker } from 'formik-mui-lab'
 import * as Yup from 'yup'
-import { Field } from 'formik'
+import { Field, useField, ErrorMessage } from 'formik'
 import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import csLocale from 'date-fns/locale/cs'
 import React from 'react'
-import { useField } from 'formik'
+import { Box } from '@mui/system'
 
 type Step = {
   label: string
@@ -21,10 +27,19 @@ type Step = {
 
 type Layout = {
   sizing: {
-    xs?: number
+    xs: number
   }
   component: Function
-  props: object & { id: string }
+  props: {
+    id: string
+    label?: string
+    Label?: { label: string }
+    fullWidth?: boolean
+    variant?: string
+    openTo?: string
+    type?: string
+    views?: Array<string>
+  }
   inputVariant?: string
   formControl?: object
   options?: {
@@ -56,7 +71,7 @@ const steps: Step[] = [
         excludeEmptyString: true,
       }),
       insurance: Yup.string().required('Povinný údaj'),
-      dob: Yup.date().required('Povinný údaj'),
+      dob: Yup.date().typeError('Toto není datum').required('Povinný údaj'),
       allergies: Yup.string(),
     }),
     layout: [
@@ -106,7 +121,7 @@ const steps: Step[] = [
         },
       },
       {
-        sizing: { xs: 4 },
+        sizing: { xs: 8 },
         component: Select,
         formControl: { fullWidth: true },
         props: {
@@ -138,18 +153,17 @@ const steps: Step[] = [
         ],
       },
       {
-        sizing: { xs: 8 },
+        sizing: { xs: 4 },
         component: DatePicker,
-        inputVariant: 'standard',
         formControl: {
           fullWidth: true,
         },
         props: {
+          textField: { variant: 'standard', fullWidth: true },
           label: 'Datum narození',
           id: 'dob',
           openTo: 'year',
           views: ['year', 'month', 'day'],
-          inputFormat: 'dd. MM. yyyy',
         },
       },
       {
@@ -158,7 +172,6 @@ const steps: Step[] = [
         props: {
           id: 'allergies',
           label: 'Alergie',
-          variant: 'standard',
           fullWidth: true,
         },
       },
@@ -193,7 +206,6 @@ const steps: Step[] = [
           id: 'parent_name',
           label: 'Celé jméno',
           fullWidth: true,
-          variant: 'standard',
         },
       },
       {
@@ -203,7 +215,6 @@ const steps: Step[] = [
           id: 'parent_address',
           fullWidth: true,
           label: 'Adresa (Pokud je jiná než u účastníka)',
-          variant: 'standard',
         },
       },
       {
@@ -213,7 +224,6 @@ const steps: Step[] = [
           id: 'parent_email',
           label: 'E-mail',
           fullWidth: true,
-          variant: 'standard',
         },
       },
       {
@@ -223,7 +233,6 @@ const steps: Step[] = [
           id: 'parent_phone',
           fullWidth: true,
           label: 'Telefon',
-          variant: 'standard',
         },
       },
     ],
@@ -232,17 +241,22 @@ const steps: Step[] = [
   },
   {
     label: 'Zamíchej, zkontroluj a nechej chvíli vařit a nezapomeň odeslat',
-    validation: Yup.object().shape({}),
+    validation: Yup.object().shape({
+      terms: Yup.boolean().required().oneOf([true], 'Nelze než souhlasit'),
+    }),
     show: true,
     layout: [
       {
-        sizing: { sx: 12 },
-        component: Switch,
+        sizing: { xs: 12 },
+        component: CheckboxWithLabel,
         props: {
           id: 'terms',
           fullWidth: true,
-          label:
-            'Souhlasím se zpracováním osobních údajů pro účely pořádáni Tábora',
+          type: 'checkbox',
+          Label: {
+            label:
+              'Souhlasím se zpracováním osobních údajů pro účely pořádáni Tábora',
+          },
         },
       },
     ],
@@ -252,18 +266,18 @@ const steps: Step[] = [
 
 const initialValues = {
   nick: '',
-  name: 'babsbsb asa',
-  address: 'asdas asdsa ad as',
-  email: 'a@v.cz',
+  name: '',
+  address: '',
+  email: '',
   phone: '',
   insurance: 'VZP (111)',
-  dob: new Date(),
+  dob: null,
   allergies: '',
-  parent_name: 'dadsad asdas',
-  parent_address: 'asda sadsa dsa',
-  parent_email: 'a@b.cz',
-  parent_phone: '123333333',
-  terms: true,
+  parent_name: '',
+  parent_address: '',
+  parent_email: '',
+  parent_phone: '',
+  terms: false,
 }
 
 const FieldValue = ({ id, label }: { id: string; label: string }) => {
@@ -309,13 +323,13 @@ const Jak = () => (
             description={s.description}
             label={s.label}
           >
-            <>
+            <Box sx={{ mb: 2, mt: 2 }}>
               {s.show &&
                 steps.map((l) => (
                   <>
                     {!l.show && (
                       <Grid container key={l.label}>
-                        <Grid item xs={12} sx={{ m: '40px' }}>
+                        <Grid item xs={12} sx={{ mt: 1, mb: 6 }}>
                           <Grid container spacing={2}>
                             <Grid item xs={12}>
                               <Typography gutterBottom variant="body2">
@@ -326,7 +340,7 @@ const Jak = () => (
                               <Grid item xs={6} key={f.props.id}>
                                 <FieldValue
                                   id={f.props.id}
-                                  label={f.props.label}
+                                  label={f.props.label || ''}
                                 />
                               </Grid>
                             ))}
@@ -340,7 +354,6 @@ const Jak = () => (
                 {s.layout?.map((f) => (
                   <Grid item key={f.props.id} {...f.sizing}>
                     <Field
-                      inputVariant="standard"
                       variant="standard"
                       {...f.props}
                       formControl={f.formControl}
@@ -350,14 +363,21 @@ const Jak = () => (
                     >
                       {f.options?.map((o) => (
                         <MenuItem key={o.value} value={o.value}>
-                          {o.label}
+                          {o.value} - {o.label}
                         </MenuItem>
                       ))}
                     </Field>
+                    {f.props.type === 'checkbox' && (
+                      <ErrorMessage name={f.props.id}>
+                        {(msg) => (
+                          <FormHelperText error={true}>{msg}</FormHelperText>
+                        )}
+                      </ErrorMessage>
+                    )}
                   </Grid>
                 ))}
               </Grid>
-            </>
+            </Box>
           </WizardStep>
         ))}
       </Wizard>
