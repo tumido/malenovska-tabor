@@ -1,16 +1,42 @@
-import { Typography, Container, MenuItem, Grid } from '@mui/material'
+import { Typography, Container, MenuItem, Grid, Paper } from '@mui/material'
 import { Wizard, WizardStep } from '../components/Wizard'
-import { TextField, Select } from 'formik-mui'
+import { TextField, Select, Switch } from 'formik-mui'
 import { DatePicker } from 'formik-mui-lab'
 import * as Yup from 'yup'
 import { Field } from 'formik'
 import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import csLocale from 'date-fns/locale/cs'
+import React from 'react'
+import { useField } from 'formik'
 
-const steps = [
+type Step = {
+  label: string
+  validation: object
+  layout?: Layout[]
+  description: string
+  show?: boolean
+  note?: string
+}
+
+type Layout = {
+  sizing: {
+    xs?: number
+  }
+  component: Function
+  props: object & { id: string }
+  inputVariant?: string
+  formControl?: object
+  options?: {
+    label: string
+    value: string
+  }[]
+}
+
+const steps: Step[] = [
   {
     label: 'Vyplň údaje o účastníkovi',
+    note: 'Účastník',
     validation: Yup.object().shape({
       nick: Yup.string(),
       name: Yup.string()
@@ -141,6 +167,7 @@ const steps = [
   },
   {
     label: 'Přidej kontakt na rodiče nebo zákonného zástupce',
+    note: 'Zákonný zástupce',
     validation: Yup.object().shape({
       parent_name: Yup.string()
         .required('Povinný údaj')
@@ -206,23 +233,56 @@ const steps = [
   {
     label: 'Zamíchej, zkontroluj a nechej chvíli vařit a nezapomeň odeslat',
     validation: Yup.object().shape({}),
+    show: true,
+    layout: [
+      {
+        sizing: { sx: 12 },
+        component: Switch,
+        props: {
+          id: 'terms',
+          fullWidth: true,
+          label:
+            'Souhlasím se zpracováním osobních údajů pro účely pořádáni Tábora',
+        },
+      },
+    ],
     description: `A teď je potřeba pořádně ověřit, že je všechno zadané správně. Po odeslání už data nelze dále upravovat.`,
   },
 ]
 
 const initialValues = {
   nick: '',
-  name: '',
-  address: '',
-  email: '',
+  name: 'babsbsb asa',
+  address: 'asdas asdsa ad as',
+  email: 'a@v.cz',
   phone: '',
-  insurance: '',
-  dob: null,
+  insurance: 'VZP (111)',
+  dob: new Date(),
   allergies: '',
-  parent_name: '',
-  parent_address: '',
-  parent_email: '',
-  parent_phone: '',
+  parent_name: 'dadsad asdas',
+  parent_address: 'asda sadsa dsa',
+  parent_email: 'a@b.cz',
+  parent_phone: '123333333',
+  terms: true,
+}
+
+const FieldValue = ({ id, label }: { id: string; label: string }) => {
+  const [field] = useField(id)
+
+  const value =
+    field.value instanceof Date
+      ? field.value.toLocaleDateString()
+      : typeof field.value === 'string'
+      ? field.value
+      : undefined
+  if (value !== undefined) {
+    return (
+      <Typography variant="body2">
+        <b>{label}</b>: {value ? value : <i>Neuvedeno</i>}
+      </Typography>
+    )
+  }
+  return null
 }
 
 const Jak = () => (
@@ -249,27 +309,55 @@ const Jak = () => (
             description={s.description}
             label={s.label}
           >
-            <Grid container spacing={2}>
-              {s.layout?.map((f) => (
-                <Grid item key={f.props.id} {...f.sizing}>
-                  <Field
-                    inputVariant="standard"
-                    variant="standard"
-                    {...f.props}
-                    formControl={f.formControl}
-                    id={f.props.id}
-                    name={f.props.id}
-                    component={f.component}
-                  >
-                    {f.options?.map((o) => (
-                      <MenuItem key={o.value} value={o.value}>
-                        {o.label}
-                      </MenuItem>
-                    ))}
-                  </Field>
-                </Grid>
-              )) || null}
-            </Grid>
+            <>
+              {s.show &&
+                steps.map((l) => (
+                  <>
+                    {!l.show && (
+                      <Grid container key={l.label}>
+                        <Grid item xs={12} sx={{ m: '40px' }}>
+                          <Grid container spacing={2}>
+                            <Grid item xs={12}>
+                              <Typography gutterBottom variant="body2">
+                                <b>{l.note}</b>
+                              </Typography>
+                            </Grid>
+                            {l.layout?.map((f) => (
+                              <Grid item xs={6} key={f.props.id}>
+                                <FieldValue
+                                  id={f.props.id}
+                                  label={f.props.label}
+                                />
+                              </Grid>
+                            ))}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )}
+                  </>
+                ))}
+              <Grid container spacing={2}>
+                {s.layout?.map((f) => (
+                  <Grid item key={f.props.id} {...f.sizing}>
+                    <Field
+                      inputVariant="standard"
+                      variant="standard"
+                      {...f.props}
+                      formControl={f.formControl}
+                      id={f.props.id}
+                      name={f.props.id}
+                      component={f.component}
+                    >
+                      {f.options?.map((o) => (
+                        <MenuItem key={o.value} value={o.value}>
+                          {o.label}
+                        </MenuItem>
+                      ))}
+                    </Field>
+                  </Grid>
+                ))}
+              </Grid>
+            </>
           </WizardStep>
         ))}
       </Wizard>
