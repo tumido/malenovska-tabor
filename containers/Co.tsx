@@ -42,6 +42,28 @@ const Co = () => {
             </li>
             <li>Termín: 20.8.2022 - 26.8.2022</li>
             <li>Cena: 4000 Kč</li>
+            <li>Letos oproti minulým ročníkům jsme si pro Vás připravili vícedenní LARP, na který od Vás potřebujeme, abyste si připrvili vlastní postavy.
+              S postavama Vám pomůže Vydra, můžete ho kontaktovat na FB, Discordu nebo na emailu vydra@malenovska.cz.
+              Abyste vědeli, co Vás čeká, zde je počáteční info, kde se bude LARP odehrávat</li>
+            <li>Děj našeho larpu se odehrává v malém, ale zdaleka ne bezvýznamném městečku. Nachází se na obchodní stezce, takže přitahuje spoustu bohatých, 
+            ale i divných lidí (a jiných bytostí). Někteří z vás zajisté slyšeli kolovat legendy o tom, že město vyhledává spousta mágů. Někteří z vás můžou ve měště již žít,
+            některé může lákat vidina bohatství, magicky nadané může lákat tajemno tohoto města. Ale taky můžete mít motivaci pro příchod úplně jiný.</li>
+            
+            <li>Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí. Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci Valašska.
+              Na základně je tekoucí pitná voda, sprcha, splachovací WC. 
+              Ubytování je ve stanech s podsadou a postelemi, nicméně je nutné si vzít dobrý spacák, na konci srpna už může být v noci zima. 
+              Doporučujeme si taky vzít karimatku pro případné spaní venku. 
+              Na základně je elektřina pouze v organizátorské chatě, ke které děti mají přístup vyjímečně. Samozřejmě bude možnost nabít telefony na konci tábora,
+              abyste se mohli s dětma domluvit na odjezdu, ale z naší zkušenosti telefony na táboře jsou spíše na škodu.
+              V průběhu tábora bude možné kontaktovat organiátory, stejně tak děti budou mít možnost kontaktovat Vás rodiče přes organizátory.
+              Ale není poetičtější napsat dopis?</li>
+            <li>Co s sebou?</li>
+            <li>Kostým na Vaši postavu<br/>
+                Spacák<br/>
+                Karimatku<br/>
+                Baterku nebo jinou svítilnu (doporučujeme čelovku)<br/>
+                </li>
+            
           </OrderedList>
         </Grid>
         <Grid item xs={12} lg={6}>
