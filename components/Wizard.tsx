@@ -51,6 +51,7 @@ export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
       onSubmit={handleSubmit}
       validationSchema={step.props.validationSchema}
       validateOnChange={false}
+      validateOnBlur={false}
     >
       {(formik) => (
         <Form>

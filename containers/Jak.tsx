@@ -39,9 +39,11 @@ type Layout = {
     openTo?: string
     type?: string
     views?: Array<string>
+    formControl?: object
+    textField?: object
+    mask?: string
   }
   inputVariant?: string
-  formControl?: object
   options?: {
     label: string
     value: string
@@ -123,8 +125,8 @@ const steps: Step[] = [
       {
         sizing: { xs: 8 },
         component: Select,
-        formControl: { fullWidth: true },
         props: {
+          formControl: { fullWidth: true },
           id: 'insurance',
           label: 'Pojišťovna',
           fullWidth: true,
@@ -155,13 +157,11 @@ const steps: Step[] = [
       {
         sizing: { xs: 4 },
         component: DatePicker,
-        formControl: {
-          fullWidth: true,
-        },
         props: {
           textField: { variant: 'standard', fullWidth: true },
           label: 'Datum narození',
           id: 'dob',
+          mask: '__.__.____',
           openTo: 'year',
           views: ['year', 'month', 'day'],
         },
@@ -326,9 +326,9 @@ const Jak = () => (
             <Box sx={{ mb: 2, mt: 2 }}>
               {s.show &&
                 steps.map((l) => (
-                  <>
+                  <React.Fragment key={l.label}>
                     {!l.show && (
-                      <Grid container key={l.label}>
+                      <Grid container>
                         <Grid item xs={12} sx={{ mt: 1, mb: 6 }}>
                           <Grid container spacing={2}>
                             <Grid item xs={12}>
@@ -348,7 +348,7 @@ const Jak = () => (
                         </Grid>
                       </Grid>
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               <Grid container spacing={2}>
                 {s.layout?.map((f) => (
@@ -356,7 +356,6 @@ const Jak = () => (
                     <Field
                       variant="standard"
                       {...f.props}
-                      formControl={f.formControl}
                       id={f.props.id}
                       name={f.props.id}
                       component={f.component}
