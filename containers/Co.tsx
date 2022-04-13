@@ -49,13 +49,16 @@ const Co = () => {
             ale i divných lidí (a jiných bytostí). Někteří z vás zajisté slyšeli kolovat legendy o tom, že město vyhledává spousta mágů. Někteří z vás můžou ve měště již žít,
             některé může lákat vidina bohatství, magicky nadané může lákat tajemno tohoto města. Ale taky můžete mít motivaci pro příchod úplně jiný.</li>
             
+            <li>Protože bude tábor zaměřený především na hraní LARPu, je třeba s sebou mít kostým, který odpovídá vaší postavě. Také vás poprosíme
+              aby jste si pro letošní rok zajistili vlastní zbraně.</li>
+            
             <li>Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí. Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci Valašska.
               Na základně je tekoucí pitná voda, sprcha, splachovací WC. 
               Ubytování je ve stanech s podsadou a postelemi, nicméně je nutné si vzít dobrý spacák, na konci srpna už může být v noci zima. 
               Doporučujeme si taky vzít karimatku pro případné spaní venku. 
-              Na základně je elektřina pouze v organizátorské chatě, ke které děti mají přístup vyjímečně. Samozřejmě bude možnost nabít telefony na konci tábora,
-              abyste se mohli s dětma domluvit na odjezdu, ale z naší zkušenosti telefony na táboře jsou spíše na škodu.
-              V průběhu tábora bude možné kontaktovat organiátory, stejně tak děti budou mít možnost kontaktovat Vás rodiče přes organizátory.
+              Na základně je elektřina pouze v organizátorské chatě, ke které účastníci mají přístup výjimečně. Samozřejmě bude možnost nabít telefony na konci tábora,
+              abyste se mohli domluvit na odjezdu, ale z naší zkušenosti telefony na táboře jsou spíše na škodu.
+              V průběhu tábora bude možné kontaktovat organiátory, stejně tak účastníci budou mít možnost kontaktovat Vás rodiče přes organizátory.
               Ale není poetičtější napsat dopis?</li>
             <li>Co s sebou?</li>
             <li>Kostým na Vaši postavu<br/>
