@@ -6,7 +6,7 @@ import {
   Paper,
   Link,
 } from '@mui/material'
-import { alpha, styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Logo from './Logo'
 import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded'
 
