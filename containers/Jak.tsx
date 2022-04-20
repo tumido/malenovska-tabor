@@ -16,7 +16,7 @@ import { Field, useField, ErrorMessage } from 'formik'
 import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import csLocale from 'date-fns/locale/cs'
-import React, { useState } from 'react'
+import React, { MouseEventHandler, useState } from 'react'
 import { Box } from '@mui/system'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 
@@ -373,7 +373,11 @@ const Form = ({ onSubmit }: { onSubmit: Function }) => (
   </LocalizationProvider>
 )
 
-const Done = ({ onClick }: { onClick: Function }) => (
+const Done = ({
+  onClick,
+}: {
+  onClick: MouseEventHandler<HTMLButtonElement>
+}) => (
   <Paper
     component={Stack}
     justifyContent="center"

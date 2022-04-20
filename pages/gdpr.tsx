@@ -1,29 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {
-  Grid,
-  Stack,
-  Typography,
-  CssBaseline,
-  Container,
-  Link,
-} from '@mui/material'
+import { Typography, CssBaseline, Container, Link } from '@mui/material'
 import { styled, ThemeProvider } from '@mui/material/styles'
-import Logo from '../components/Logo'
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown'
-import Slide from '@mui/material/Slide'
 import { theme } from '../utils/theme'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Co from '../containers/Co'
-import Kdo from '../containers/Kdo'
-import Jak from '../containers/Jak'
 
-const Item = styled('div')(() => ({
-  minHeight: '80vh',
-}))
-
-const Home: NextPage = () => (
+const Gdpr: NextPage = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <Head>
@@ -103,4 +86,4 @@ const Home: NextPage = () => (
   </ThemeProvider>
 )
 
-export default Home
+export default Gdpr
