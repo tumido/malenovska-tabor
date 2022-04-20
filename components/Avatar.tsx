@@ -11,8 +11,14 @@ type AvatarBaseProps = {
 const AvatarBase = styled('div', {
   shouldForwardProp: (p) => p === 'children',
 })(({ src, hasLabel, variant, theme }: AvatarBaseProps) => ({
-  height: variant === 'large' ? '600px' : '300px',
-  width: variant === 'large' ? '600px' : '300px',
+  [theme?.breakpoints.up('md') as string]: {
+    height: variant === 'large' ? '600px' : '300px',
+    width: variant === 'large' ? '600px' : '300px',
+  },
+  [theme?.breakpoints.down('md') as string]: {
+    height: '300px',
+    width: '300px',
+  },
   border: `4px solid ${theme?.palette.primary.main}`,
   borderRadius: '50%',
   backgroundImage: `url(${src})`,

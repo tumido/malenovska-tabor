@@ -65,22 +65,22 @@ const Gdpr: NextPage = () => (
       <Typography variant="body1">
         Máte právo přístupu k informacím, právo na opravu osobních údajů i další
         práva stanovená v § 21 GDPR, tj. zejm.:
-        <ul>
-          <li>právo na přístup k osobním údajům,</li>
-          <li>právo na kopii zpracovávaných osobních údajů,</li>
-          <li>
-            právo na opravu nepřesných nebo na doplnění neúplných osobních údajů
-            bez zbytečného odkladu,
-          </li>
-          <li>právo na výmaz osobních údajů bez zbytečného odkladu,</li>
-          <li>právo na omezení zpracování osobních údajů,</li>
-          <li>právo na přenositelnost údajů,</li>
-          <li>
-            právo podat stížnost ohledně činnosti Správce nebo příjemce osobních
-            údajů.
-          </li>
-        </ul>
       </Typography>
+      <ul>
+        <li>právo na přístup k osobním údajům,</li>
+        <li>právo na kopii zpracovávaných osobních údajů,</li>
+        <li>
+          právo na opravu nepřesných nebo na doplnění neúplných osobních údajů
+          bez zbytečného odkladu,
+        </li>
+        <li>právo na výmaz osobních údajů bez zbytečného odkladu,</li>
+        <li>právo na omezení zpracování osobních údajů,</li>
+        <li>právo na přenositelnost údajů,</li>
+        <li>
+          právo podat stížnost ohledně činnosti Správce nebo příjemce osobních
+          údajů.
+        </li>
+      </ul>
     </Container>
     <Footer />
   </ThemeProvider>
