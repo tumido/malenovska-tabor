@@ -4,6 +4,9 @@ import {
   MenuItem,
   Grid,
   FormHelperText,
+  Button,
+  Stack,
+  Paper,
 } from '@mui/material'
 import { Wizard, WizardStep } from '../components/Wizard'
 import { TextField, Select, CheckboxWithLabel } from 'formik-mui'
@@ -13,8 +16,9 @@ import { Field, useField, ErrorMessage } from 'formik'
 import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import csLocale from 'date-fns/locale/cs'
-import React from 'react'
+import React, { useState } from 'react'
 import { Box } from '@mui/system'
+import { collection, addDoc, getFirestore } from 'firebase/firestore'
 
 type Step = {
   label: string
@@ -254,12 +258,8 @@ const steps: Step[] = [
           fullWidth: true,
           type: 'checkbox',
           Label: {
-            label: () => (
-              <>
-                Souhlasím se zpracováním osobních údajů dle zásad GDPR pro účely
-                pořádáni Tábora
-              </>
-            ),
+            label:
+              'Souhlasím se zpracováním osobních údajů dle zásad GDPR pro účely pořádáni Tábora',
           },
         },
       },
@@ -303,89 +303,129 @@ const FieldValue = ({ id, label }: { id: string; label: string }) => {
   return null
 }
 
-const Jak = () => (
-  <Container maxWidth="lg">
-    <Typography variant="h2" textAlign="center" color="primary" gutterBottom>
-      Jak?
-    </Typography>
-    <Typography variant="body1" gutterBottom>
-      Registrace je veskrze jednoduchá, nepodepisuje se krví, ani duši není
-      třeba odevzdat.Stačí vyplnit pár údajů, kliknout {`"`}Odeslat
-      {`"`} a je hotovo. Dále se s vámi organizátoři spojí emailem. Jdeme na to:
-    </Typography>
-    <LocalizationProvider dateAdapter={AdapterDateFns} locale={csLocale}>
-      <Wizard
-        initialValues={initialValues}
-        onSubmit={(a) => {
-          console.log(a)
-        }}
-      >
-        {steps.map((s) => (
-          <WizardStep
-            key={s.label}
-            validationSchema={s.validation}
-            description={s.description}
-            label={s.label}
-          >
-            <Box sx={{ mb: 2, mt: 2 }}>
-              {s.show &&
-                steps.map((l) => (
-                  <React.Fragment key={l.label}>
-                    {!l.show && (
-                      <Grid container>
-                        <Grid item xs={12} sx={{ mt: 1, mb: 6 }}>
-                          <Grid container spacing={2}>
-                            <Grid item xs={12}>
-                              <Typography gutterBottom variant="body2">
-                                <b>{l.note}</b>
-                              </Typography>
-                            </Grid>
-                            {l.layout?.map((f) => (
-                              <Grid item xs={6} key={f.props.id}>
-                                <FieldValue
-                                  id={f.props.id}
-                                  label={f.props.label || ''}
-                                />
-                              </Grid>
-                            ))}
+const Form = ({ onSubmit }: { onSubmit: Function }) => (
+  <LocalizationProvider dateAdapter={AdapterDateFns} locale={csLocale}>
+    <Wizard initialValues={initialValues} onSubmit={onSubmit}>
+      {steps.map((s) => (
+        <WizardStep
+          key={s.label}
+          validationSchema={s.validation}
+          description={s.description}
+          label={s.label}
+        >
+          <Box sx={{ mb: 2, mt: 2 }}>
+            {s.show &&
+              steps.map((l) => (
+                <React.Fragment key={l.label}>
+                  {!l.show && (
+                    <Grid container>
+                      <Grid item xs={12} sx={{ mt: 1, mb: 6 }}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={12}>
+                            <Typography gutterBottom variant="body2">
+                              <b>{l.note}</b>
+                            </Typography>
                           </Grid>
+                          {l.layout?.map((f) => (
+                            <Grid item xs={6} key={f.props.id}>
+                              <FieldValue
+                                id={f.props.id}
+                                label={f.props.label || ''}
+                              />
+                            </Grid>
+                          ))}
                         </Grid>
                       </Grid>
-                    )}
-                  </React.Fragment>
-                ))}
-              <Grid container spacing={2}>
-                {s.layout?.map((f) => (
-                  <Grid item key={f.props.id} {...f.sizing}>
-                    <Field
-                      variant="standard"
-                      {...f.props}
-                      id={f.props.id}
-                      name={f.props.id}
-                      component={f.component}
-                    >
-                      {f.options?.map((o) => (
-                        <MenuItem key={o.value} value={o.value}>
-                          {o.value} - {o.label}
-                        </MenuItem>
-                      ))}
-                    </Field>
-                    {f.props.type === 'checkbox' && (
-                      <ErrorMessage name={f.props.id}>
-                        {(msg) => (
-                          <FormHelperText error={true}>{msg}</FormHelperText>
-                        )}
-                      </ErrorMessage>
-                    )}
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-          </WizardStep>
-        ))}
-      </Wizard>
-    </LocalizationProvider>
-  </Container>
+                    </Grid>
+                  )}
+                </React.Fragment>
+              ))}
+            <Grid container spacing={2}>
+              {s.layout?.map((f) => (
+                <Grid item key={f.props.id} {...f.sizing}>
+                  <Field
+                    variant="standard"
+                    {...f.props}
+                    id={f.props.id}
+                    name={f.props.id}
+                    component={f.component}
+                  >
+                    {f.options?.map((o) => (
+                      <MenuItem key={o.value} value={o.value}>
+                        {o.value} - {o.label}
+                      </MenuItem>
+                    ))}
+                  </Field>
+                  {f.props.type === 'checkbox' && (
+                    <ErrorMessage name={f.props.id}>
+                      {(msg) => (
+                        <FormHelperText error={true}>{msg}</FormHelperText>
+                      )}
+                    </ErrorMessage>
+                  )}
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </WizardStep>
+      ))}
+    </Wizard>
+  </LocalizationProvider>
 )
+
+const Done = ({ onClick }: { onClick: Function }) => (
+  <Paper
+    component={Stack}
+    justifyContent="center"
+    alignItems="center"
+    spacing={4}
+    variant="outlined"
+    sx={{
+      p: 2,
+      display: 'flex',
+      m: 10,
+    }}
+  >
+    <Typography variant="body1" gutterBottom>
+      Příhláška byla odeslána ke zpracování. Brzy Vám přistane na parapetu
+      poštovní holub nebo email ve schránce.
+    </Typography>
+    <Button variant="contained" onClick={onClick}>
+      Nová přihláška
+    </Button>
+  </Paper>
+)
+
+const Jak = () => {
+  const [showWizard, setShowWizard] = useState(true)
+
+  const handleSubmit = (data: object) => {
+    setShowWizard(false)
+    const sanitizedData = Object.entries(data).reduce(
+      (acc, [k, v]) => (v !== undefined ? { ...acc, [k]: v } : acc),
+      {}
+    )
+    addDoc(collection(getFirestore(), 'registrations'), sanitizedData)
+  }
+
+  return (
+    <Container maxWidth="lg">
+      <Typography variant="h2" textAlign="center" color="primary" gutterBottom>
+        Jak?
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Registrace je veskrze jednoduchá, nepodepisuje se krví, ani duši není
+        třeba odevzdat.Stačí vyplnit pár údajů, kliknout {`"`}Odeslat
+        {`"`} a je hotovo. Dále se s vámi organizátoři spojí emailem. Jdeme na
+        to:
+      </Typography>
+      {showWizard ? (
+        <Form onSubmit={handleSubmit} />
+      ) : (
+        <Done onClick={() => setShowWizard(true)} />
+      )}
+    </Container>
+  )
+}
 
 export default Jak
