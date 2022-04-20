@@ -33,7 +33,7 @@ type Layout = {
   props: {
     id: string
     label?: string
-    Label?: { label: string }
+    Label?: { label: unknown }
     fullWidth?: boolean
     variant?: string
     openTo?: string
@@ -254,8 +254,12 @@ const steps: Step[] = [
           fullWidth: true,
           type: 'checkbox',
           Label: {
-            label:
-              'Souhlasím se zpracováním osobních údajů pro účely pořádáni Tábora',
+            label: () => (
+              <>
+                Souhlasím se zpracováním osobních údajů dle zásad GDPR pro účely
+                pořádáni Tábora
+              </>
+            ),
           },
         },
       },

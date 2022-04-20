@@ -10,21 +10,16 @@ import { alpha, styled } from '@mui/material/styles'
 import Logo from './Logo'
 import KeyboardArrowRightRounded from '@mui/icons-material/KeyboardArrowRightRounded'
 
+const StyledFooter = styled('footer')(({ theme }) => ({
+  marginTop: theme.spacing(10),
+}))
+
 const Footer = () => (
-  <footer>
+  <StyledFooter>
     <Divider />
     <Container maxWidth="lg" sx={{ my: 4, mx: 'auto' }}>
       <Grid container spacing={{ xs: 5, md: 4 }} alignItems="center">
         <Grid item xs={12} sm={6} md={6} sx={{ mb: { md: 4 } }}>
-          <Typography
-            color="primary.600"
-            component="h2"
-            fontWeight="bold"
-            variant="body2"
-            sx={{ mt: 1 }}
-          >
-            Přidej se k nám
-          </Typography>
           <Typography variant="h2" sx={{ maxWidth: 460, mb: 1 }}>
             Táb
             <Logo size="uppercase" />r bude!
@@ -107,6 +102,6 @@ const Footer = () => (
         </Grid>
       </Grid>
     </Container>
-  </footer>
+  </StyledFooter>
 )
 export default Footer

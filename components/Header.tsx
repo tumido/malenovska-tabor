@@ -55,6 +55,11 @@ const Header = () => {
               Registrace
             </Button>
           </Link>
+          <Link href="/gdpr" passHref>
+            <Button component="a" color="primary">
+              GDPR
+            </Button>
+          </Link>
           {user && (
             <Tooltip title="Odhlásit se" enterDelay={300}>
               <IconButton
