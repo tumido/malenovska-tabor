@@ -17,7 +17,7 @@ const Gdpr: NextPage = () => (
     <Header />
     <Container maxWidth="lg" sx={{ mt: '100px' }}>
       <Typography variant="h1">Zásady GDPR</Typography>
-      <Typography variant="subtitle2" gutterBottom>
+      <Typography variant="subtitle1" gutterBottom>
         Zásady nakládání s osobními údaji
       </Typography>
       <Typography variant="h4" component="h2" gutterBottom>

@@ -54,6 +54,12 @@ export const theme = createTheme({
       textTransform: 'uppercase',
       fontWeight: 900,
     },
+    subtitle2: {
+      color: primary.main,
+      textTransform: 'uppercase',
+      fontWeight: 900,
+      fontSize: '1.5rem',
+    },
   },
   components: {
     MuiTypography: {
