@@ -29,7 +29,7 @@ const StyledWrapper = styled('div')({
   backgroundRepeat: 'no-repeat',
   backgroundColor: '#fff2ca',
   backgroundPosition: 'bottom center',
-  backgroundImage: "url('forest.png')",
+  backgroundImage: "url('/forest.png')",
   height: '100vh',
   backgroundAttachment: 'fixed',
   overflowY: 'scroll',

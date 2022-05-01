@@ -16,7 +16,7 @@ const StyledDiv = styled('div', {
   [theme.breakpoints.up('xl')]: {
     backgroundSize: '100% auto',
   },
-  backgroundImage: "url('forest.png')",
+  backgroundImage: "url('/forest.png')",
   width: '100%',
   height,
 }))
