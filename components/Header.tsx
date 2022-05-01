@@ -9,7 +9,6 @@ import {
 } from '@mui/material'
 import { getAuth } from 'firebase/auth'
 import LogoutIcon from '@mui/icons-material/LogoutOutlined'
-import LoginIcon from '@mui/icons-material/LoginOutlined'
 import firebase from '../firebase/clientApp'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Link from 'next/link'
@@ -61,15 +60,22 @@ const Header = () => {
             </Button>
           </Link>
           {user && (
-            <Tooltip title="Odhlásit se" enterDelay={300}>
-              <IconButton
-                color="primary"
-                onClick={() => firebase.auth().signOut()}
-                sx={{ px: '8px' }}
-              >
-                <LogoutIcon fontSize="small" />
-              </IconButton>
-            </Tooltip>
+            <>
+              <Link href="/admin" passHref>
+                <Button component="a" color="primary">
+                  Administrace
+                </Button>
+              </Link>
+              <Tooltip title="Odhlásit se" enterDelay={300}>
+                <IconButton
+                  color="primary"
+                  onClick={() => firebase.auth().signOut()}
+                  sx={{ px: '8px' }}
+                >
+                  <LogoutIcon fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </>
           )}
         </Stack>
       </Toolbar>
