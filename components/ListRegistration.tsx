@@ -19,8 +19,14 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { Registration } from '../firebase/schema'
+import ConfirmDialog from './ConfirmDialog'
 
-const Row = ({ row }: { row: Registration }) => {
+type RowProps = {
+  row: Registration
+  onDeleteEntry: (id: string) => Promise<void>
+}
+
+const Row = ({ row, onDeleteEntry }: RowProps) => {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -47,12 +53,16 @@ const Row = ({ row }: { row: Registration }) => {
         <TableCell align="right">
           {open && (
             <ButtonGroup>
-              <IconButton>
+              <IconButton disabled>
                 <EditIcon />
               </IconButton>
-              <IconButton>
+              <ConfirmDialog
+                onSubmit={() => onDeleteEntry(row.id)}
+                title="Smazat registraci?"
+                content={`Opravdu chcete smazat registraci pro "${row.name}"`}
+              >
                 <DeleteIcon />
-              </IconButton>
+              </ConfirmDialog>
             </ButtonGroup>
           )}
         </TableCell>
@@ -175,7 +185,12 @@ const Row = ({ row }: { row: Registration }) => {
   )
 }
 
-const ListRegistration = ({ data }: { data: Registration[] }) => (
+type ListRegistrationProps = {
+  data: Registration[]
+  onDeleteEntry: (id: string) => Promise<void>
+}
+
+const ListRegistration = ({ data, onDeleteEntry }: ListRegistrationProps) => (
   <TableContainer component={Paper}>
     <Table>
       <TableHead>
@@ -188,7 +203,7 @@ const ListRegistration = ({ data }: { data: Registration[] }) => (
       </TableHead>
       <TableBody>
         {data.map((row) => (
-          <Row key={row.id} row={row} />
+          <Row key={row.id} row={row} onDeleteEntry={onDeleteEntry} />
         ))}
       </TableBody>
     </Table>
