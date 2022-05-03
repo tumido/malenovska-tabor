@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { ThemeProvider, styled } from '@mui/material/styles'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollection } from 'react-firebase-hooks/firestore'
+import { useCollection, useDocumentOnce } from 'react-firebase-hooks/firestore'
 import { collection } from 'firebase/firestore'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
 import { CSVLink } from 'react-csv'
@@ -105,6 +105,10 @@ const Admin = () => {
     navigator.clipboard.writeText(data.map((doc) => doc[property]).join(', '))
   }
 
+  const handleDeleteEntry = async (id: string) => {
+    await firebase.firestore().collection('registrations').doc(id).delete()
+  }
+
   return (
     <Container maxWidth="lg" sx={{ pt: 15 }}>
       <Grid container spacing={4}>
@@ -134,7 +138,7 @@ const Admin = () => {
           </Button>
         </Grid>
         <Grid item xs={12}>
-          <ListRegistration data={data} />
+          <ListRegistration data={data} onDeleteEntry={handleDeleteEntry} />
         </Grid>
       </Grid>
       <CSVLink ref={csvRef} data={data} filename="export.csv" />
