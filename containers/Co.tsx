@@ -40,7 +40,7 @@ const Co = () => {
                 Mapy.cz
               </Button>
             </li>
-            <li>Termín: 20.8.2022 - 26.8.2022</li>
+            <li>Termín: 21.8.2022 - 27.8.2022</li>
             <li>Cena: 4300 Kč</li>
             <li>Letos oproti minulým ročníkům jsme si pro Vás připravili vícedenní LARP, na který od Vás potřebujeme, abyste si připrvili vlastní postavy.
               S postavama Vám pomůže Vydra, můžete ho kontaktovat na FB, Discordu nebo na emailu vydra@malenovska.cz.
