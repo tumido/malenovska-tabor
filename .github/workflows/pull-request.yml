@@ -3,12 +3,15 @@
 
 name: Pull request
 
-"on": pull_request
+on:
+  pull_request_target:
+    paths_ignore:
+      - ".github"
+      - "functions"
 
 jobs:
   build_and_preview:
     name: Build and preview
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
