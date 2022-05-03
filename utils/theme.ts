@@ -45,10 +45,20 @@ export const theme = createTheme({
       color: primary.main,
       textTransform: 'uppercase',
     },
+    h4: {
+      marginTop: '1em',
+      color: primary.main,
+    },
     subtitle1: {
       color: primary.light,
       textTransform: 'uppercase',
       fontWeight: 900,
+    },
+    subtitle2: {
+      color: primary.main,
+      textTransform: 'uppercase',
+      fontWeight: 900,
+      fontSize: '1.5rem',
     },
   },
   components: {

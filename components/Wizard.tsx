@@ -50,6 +50,8 @@ export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
       initialValues={snapshot}
       onSubmit={handleSubmit}
       validationSchema={step.props.validationSchema}
+      validateOnChange={false}
+      validateOnBlur={false}
     >
       {(formik) => (
         <Form>
@@ -61,25 +63,20 @@ export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
                 </StepLabel>
                 <StepContent>
                   {step}
-                  <Box sx={{ mb: 2 }}>
-                    <div>
-                      <Button
-                        variant="contained"
-                        type="submit"
-                        disabled={formik.isSubmitting}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        {index === steps.length - 1 ? 'Odeslat' : 'Další krok'}
+                  <Box sx={{ mb: 2, mt: 4 }}>
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      disabled={formik.isSubmitting}
+                      sx={{ mr: 1 }}
+                    >
+                      {index === steps.length - 1 ? 'Odeslat' : 'Další krok'}
+                    </Button>
+                    {index !== 0 && (
+                      <Button onClick={() => previous(formik.values)}>
+                        Zpět
                       </Button>
-                      {index !== 0 && (
-                        <Button
-                          onClick={() => previous(formik.values)}
-                          sx={{ mt: 1, mr: 1 }}
-                        >
-                          Zpět
-                        </Button>
-                      )}
-                    </div>
+                    )}
                   </Box>
                 </StepContent>
               </Step>

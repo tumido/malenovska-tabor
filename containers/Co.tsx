@@ -1,7 +1,7 @@
 import { Grid, Typography, Container, Button } from '@mui/material'
 import Logo from '../components/Logo'
-import Avatar from '../components/Avatar'
 import OrderedList from '../components/OrderedList'
+import Image from '../components/Image'
 
 const Co = () => {
   return (
@@ -70,7 +70,7 @@ const Co = () => {
           </OrderedList>
         </Grid>
         <Grid item xs={12} lg={6}>
-          <Avatar src="/smr_zakladna.jpg" variant="large" />
+          <Image src="/smr_zakladna.jpg" />
         </Grid>
       </Grid>
     </Container>

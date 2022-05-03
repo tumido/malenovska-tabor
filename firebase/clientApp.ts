@@ -1,15 +1,14 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
-// import { enableIndexedDbPersistence } from 'firebase/firestore
 
 const clientCredentials = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: 'AIzaSyDv2zr15MDlGV6GQbmHndRjCLVF6dVNvFA',
+  authDomain: 'malenovsky-tabor.firebaseapp.com',
+  projectId: 'malenovsky-tabor',
+  storageBucket: 'malenovsky-tabor.appspot.com',
+  messagingSenderId: '805492098725',
+  appId: '1:805492098725:web:a2b0f86bdf8c72f32baf4c',
 }
 
 if (!firebase.apps.length) {
