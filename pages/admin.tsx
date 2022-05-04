@@ -30,9 +30,9 @@ const StyledWrapper = styled('div')({
   backgroundColor: '#fff2ca',
   backgroundPosition: 'bottom center',
   backgroundImage: "url('/forest.png')",
-  height: '100vh',
+  backgroundSize: '100% auto',
+  minHeight: '100vh',
   backgroundAttachment: 'fixed',
-  overflowY: 'scroll',
 })
 
 const CopyButton = ({

@@ -8,20 +8,24 @@ type ImageBaseProps = {
 
 const ImageBase = styled('div')(({ src, theme }: ImageBaseProps) => ({
   [theme?.breakpoints.up('md') as string]: {
-    height: '600px',
-    width: '600px',
+    maxWidth: '600px',
   },
   [theme?.breakpoints.down('md') as string]: {
-    height: '300px',
-    width: '300px',
+    maxWidth: '300px',
   },
+  width: '100%',
   border: `4px solid ${theme?.palette.primary.main}`,
   borderRadius: '50%',
   backgroundImage: `url(${src})`,
   backgroundSize: 'cover',
   overflow: 'hidden',
   position: 'relative',
-  margin: '20px',
+  margin: '20px auto',
+  '&:after': {
+    content: '""',
+    display: 'block',
+    paddingBottom: '100%',
+  },
 }))
 
 const Image = ({ src }: { src: string }) => <ImageBase src={src} />

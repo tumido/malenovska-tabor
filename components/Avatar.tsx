@@ -14,14 +14,19 @@ type AvatarImageProps = {
 }
 
 const AvatarImage = styled('div')(({ image, theme }: AvatarImageProps) => ({
-  height: '300px',
-  width: '300px',
+  maxWidth: '300px',
+  width: '100%',
   border: `4px solid ${theme?.palette.primary.main}`,
   borderRadius: '50%',
   backgroundImage: `url(${image})`,
   backgroundSize: 'cover',
   overflow: 'hidden',
-  margin: '20px',
+  margin: '20px auto',
+  '&:after': {
+    content: '""',
+    display: 'block',
+    paddingBottom: '100%',
+  },
 }))
 
 type AvatarProps = {
