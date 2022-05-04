@@ -48,7 +48,7 @@ const Kdo = () => (
         spacing={2}
       >
         {people.map((p) => (
-          <Grid key={p.name} item xs={6} lg={4}>
+          <Grid key={p.name} item xs={12} sm={6} lg={4}>
             <Avatar {...p} />
           </Grid>
         ))}
