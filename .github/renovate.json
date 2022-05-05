@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "config:js-app",
+        ":gitSignOff",
+        "group:allNonMajor",
+        "group:linters",
+        "group:semantic-releaseMonorepo"
+    ],
+    "npm": {
+        "stabilityDays": 3
+    }
+}
