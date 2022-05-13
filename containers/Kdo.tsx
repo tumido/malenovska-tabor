@@ -8,7 +8,7 @@ const people = [
     nick: 'Vydra',
     name: 'Martin Andrýsek',
     role: 'Hlavní vedoucí',
-    desc: 'Já jsem Vydra, nikdo mi jinak neřekne. Táborům, dřevárnám a LARPům se věnuji už přes 10 let, tábory jsem od mala miloval a vždycky jsem tíhl k fantasy literatuře. Takže když jsem objevil LARPy, tak se mi spojily moje 2 koníčky do jednoho. Jinak se rád potuluji po lese a trávím čas s kamarády, idealně na nějaké akci u uhně s kytarou',
+    desc: 'Já jsem Vydra, nikdo mi jinak neřekne. Táborům, dřevárnám a LARPům se věnuji už přes 10 let. Tábory jsem miloval od mala a vždycky jsem tíhl k fantasy literatuře, počítačovým a deskovým hrám na hrdiny. Takže když jsem objevil LARPy, tak jsem si mohl prožít všechny ty epické příběhy a bitvy na živo. Proto tento úžasný koníček chci předávat dalším lidem, aby si jako já našli svoje místo. Jinak se rád potuluji po lese a trávím čas s kamarády, idealně na nějaké akci u uhně s kytarou',
   },
   {
     avatar: '/skali.jpg',
