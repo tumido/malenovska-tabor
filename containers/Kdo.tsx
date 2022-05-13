@@ -15,22 +15,14 @@ const people = [
     nick: 'Skali',
     name: 'Petr Skalka',
     role: 'Vedoucí',
-    desc: 'Já jsem Petr na kterého často táborníci volají přezdívkou "Skali", jsem zkušeným vedoucím se silným vztahem k fantasy. Už na základní a střední škole mě fascinovalo dračí doupě a podobné hry. Na první bitvě jsem běhal v prostěradlovém kostýmu a s mečem, jež jsem vyrobil z klacku, co jsem ukradl taťkovi ze zahrady od rajčat. Moje filosofie "na Larpy by se mělo jezdit pro radost, historickou přesnost a dokonalé kostýmy si nechte na rekonstrukce akcí".
-Hraju na kytaru, rád vařím (a taky si to sním) a občas zajdu na procházku.',
+    desc: 'Já jsem Petr na kterého často táborníci volají přezdívkou "Skali", jsem zkušeným vedoucím se silným vztahem k fantasy. Už na základní a střední škole mě fascinovalo dračí doupě a podobné hry. Na první bitvě jsem běhal v prostěradlovém kostýmu a s mečem, jež jsem vyrobil z klacku, co jsem ukradl taťkovi ze zahrady od rajčat. Moje filosofie "na Larpy by se mělo jezdit pro radost, historickou přesnost a dokonalé kostýmy si nechte na rekonstrukce akcí".Hraju na kytaru, rád vařím (a taky si to sním) a občas zajdu na procházku.',
   },
   {
     avatar: '/kuldas.jpg',
     nick: 'Kulďas',
     name: 'Michal Řezáč',
     role: 'Vedoucí',
-    desc: 'Já jsem Michal a tábory jezdím tak dlouho, že si ještě pamatuju když byly elfové uznávaný národ. Občas mám pocit, že jsem se narodil s fantasy knížkou
-    v ruce. K dřevárnám a larpům jsem se dostal začátkem střední
-a nepustili mě dodnes. Rád se učím novým věcem a ještě
-raději své zkušenosti předávám ostatním. Protože když
-už člověk něco dělá, tak by to měl dělat pořádně.
-Také se věnuji historickému šermu, abych pořád nedostával
-na bitvách takovou bídu, sem tam něco brnknu na kytaru
-a rád si poslechnu talentované muzikanty.
+    desc: 'Já jsem Michal a tábory jezdím tak dlouho, že si ještě pamatuju když byly elfové uznávaný národ. Občas mám pocit, že jsem se narodil s fantasy knížkou v ruce. K dřevárnám a larpům jsem se dostal začátkem střední a nepustili mě dodnes. Rád se učím novým věcem a ještě raději své zkušenosti předávám ostatním. Protože když už člověk něco dělá, tak by to měl dělat pořádně. Také se věnuji historickému šermu, abych pořád nedostával na bitvách takovou bídu, sem tam něco brnknu na kytarua rád si poslechnu talentované muzikanty.
 ',
   },
 ]
