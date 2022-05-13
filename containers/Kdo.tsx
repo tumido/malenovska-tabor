@@ -22,8 +22,7 @@ const people = [
     nick: 'Kulďas',
     name: 'Michal Řezáč',
     role: 'Vedoucí',
-    desc: 'Já jsem Michal a tábory jezdím tak dlouho, že si ještě pamatuju když byly elfové uznávaný národ. Občas mám pocit, že jsem se narodil s fantasy knížkou v ruce. K dřevárnám a larpům jsem se dostal začátkem střední a nepustili mě dodnes. Rád se učím novým věcem a ještě raději své zkušenosti předávám ostatním. Protože když už člověk něco dělá, tak by to měl dělat pořádně. Také se věnuji historickému šermu, abych pořád nedostával na bitvách takovou bídu, sem tam něco brnknu na kytarua rád si poslechnu talentované muzikanty.
-',
+    desc: 'Já jsem Michal a tábory jezdím tak dlouho, že si ještě pamatuju když byly elfové uznávaný národ. Občas mám pocit, že jsem se narodil s fantasy knížkou v ruce. K dřevárnám a larpům jsem se dostal začátkem střední a nepustili mě dodnes. Rád se učím novým věcem a ještě raději své zkušenosti předávám ostatním. Protože když už člověk něco dělá, tak by to měl dělat pořádně. Také se věnuji historickému šermu, abych pořád nedostával na bitvách takovou bídu, sem tam něco brnknu na kytarua rád si poslechnu talentované muzikanty.',
   },
 ]
 
