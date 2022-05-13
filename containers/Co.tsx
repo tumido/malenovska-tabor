@@ -15,7 +15,9 @@ const Co = () => {
             <li>
               Tradiční Larpový tábor pro účastníky ze všech koutků ČR se letos
               přesouvá na novou základnu. Tábor proběhne na Křekově u Valašských
-              Klobouk
+              Klobouk. Bohužel nejsme schopni zajistit hromadnou dopravu na tábor, 
+              tak je potřeba se dopravit po vlastní ose. Dotazy k dopravě směřujte na 
+              <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>
               <Button
                 variant="text"
                 size="large"
