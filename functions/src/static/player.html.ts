@@ -1,6 +1,6 @@
 export default `
 <h2>Přihlášení proběhlo úspěšně!</h2>
-<p>Prosím zkontoluj správnost údajů níže. V přápadě nejasností kontaktuj vydra@malenovska.cz</p>
+<p>Prosím zkontolujte správnost údajů níže. V přápadě nejasností odpovězte na tento e-mail.</p>
 <h4>Hráč:</h4>
 <table>
     <tr>
@@ -20,16 +20,16 @@ export default `
         <td><a href="tel:{{phone}}">{{phone}}</a></td>
     </tr>
     <tr>
+        <td>Adresa</td>
+        <td>{{address}}</td>
+    </tr>
+    <tr>
         <td>Datum narození</td>
         <td>{{dob}}</td>
     </tr>
     <tr>
         <td>Alerie</td>
         <td>{{allergies}}</td>
-    </tr>
-    <tr>
-        <td>Adresa</td>
-        <td>{{address}}</td>
     </tr>
     <tr>
         <td>Pojišťovna</td>
@@ -54,7 +54,6 @@ export default `
         <td>Adresa</td>
         <td>{{parent_address}}</td>
     </tr>
-</table>`
-
-<p>Další informace budou následovat, mějte prosím strpení</p>
+</table>
+<p>Další informace budou následovat, mějte prosím strpení.</p>
 `
