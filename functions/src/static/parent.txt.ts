@@ -16,10 +16,10 @@ Pojišťovna: {{insurance}}
 
 Rodič:
 
-Jméno: {{parent_ name}}
-E-mail: {{parent_ email}}
-Telefon: {{parent_ phone}}
-Adresa: {{parent_ address}}
+Jméno: {{parent_name}}
+E-mail: {{parent_email}}
+Telefon: {{parent_phone}}
+Adresa: {{parent_address}}
 
 Další informace budou následovat, mějte prosím strpení.
 `
