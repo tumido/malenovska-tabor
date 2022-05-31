@@ -30,7 +30,7 @@ const transporter = nodemailer.createTransport({
 type Registration = {
   address: string
   allergies: string
-  dob: admin.firestore.Timestamp
+  dob: admin.firestore.Timestamp | string
   email: string
   insurance: string
   name: string
@@ -47,6 +47,10 @@ exports.onRegistration = functions.firestore
   .document('/registrations/{id}')
   .onCreate(async (snap, context) => {
     const data = snap.data() as Registration
+
+    data.dob = (data.dob as admin.firestore.Timestamp)
+      .toDate()
+      .toLocaleDateString('cs-CZ')
 
     const messages = [
       {
