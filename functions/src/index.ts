@@ -75,7 +75,7 @@ exports.onRegistration = functions.firestore
         type: 'org',
         message: {
           from: 'Malenovský krmelec <krmelec@malenovska.cz>',
-          to: 'tumi@malenovska.cz',
+          to: 'tabor@malenovska.cz',
           subject: `🤖 Nová registrace: ${data.name}`,
           text: orgTxt({ ...data, id: context.params.id }),
           html: orgHtml({ ...data, id: context.params.id }),
