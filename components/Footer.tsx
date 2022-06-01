@@ -39,6 +39,8 @@ const Footer = () => (
                 height: '100%',
                 display: 'block',
                 textDecoration: 'none',
+                '&  svg': { transition: '0.2s' },
+                '&:hover  svg': { transform: 'translateX(2px)' },
               }}
             >
               <Typography variant="body2" fontWeight="bold" sx={{ mb: 0.5 }}>
@@ -47,15 +49,7 @@ const Footer = () => (
               <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                 Pořádáme i bitvy Malenovská a Malenovská Šarvátka
               </Typography>
-              <Typography
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  '& > svg': { transition: '0.2s' },
-                  '&:hover > svg': { transform: 'translateX(2px)' },
-                }}
-              >
+              <Typography color="primary" variant="body2" fontWeight="bold">
                 Další informace{' '}
                 <KeyboardArrowRightRounded
                   fontSize="small"
@@ -66,8 +60,6 @@ const Footer = () => (
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper
-              component={Link}
-              href="https://zlisky.cz"
               variant="outlined"
               sx={{
                 p: 2,
@@ -82,16 +74,8 @@ const Footer = () => (
               <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                 Na akci se podílí dřevárnická skupina přátel Zlišky
               </Typography>
-              <Typography
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  '& > svg': { transition: '0.2s' },
-                  '&:hover > svg': { transform: 'translateX(2px)' },
-                }}
-              >
-                Další informace{' '}
+              <Typography color="primary" variant="body2" fontWeight="bold">
+                Připravujeme{' '}
                 <KeyboardArrowRightRounded
                   fontSize="small"
                   sx={{ verticalAlign: 'middle' }}
