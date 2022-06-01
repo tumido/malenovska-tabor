@@ -9,7 +9,7 @@ const Co = () => {
       <Typography variant="h2" textAlign="center" color="primary" gutterBottom>
         C<Logo size="uppercase" />?
       </Typography>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} lg={6}>
           <OrderedList>
             <li>
@@ -68,7 +68,7 @@ const Co = () => {
           <Image src="/smr_zakladna.jpg" />
         </Grid>
       </Grid>
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body1" gutterBottom sx={{ mt: 2 }}>
         Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí.
         Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci
         Valašska. Na základně je tekoucí pitná voda, sprcha, splachovací WC.

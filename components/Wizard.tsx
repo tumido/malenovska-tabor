@@ -37,7 +37,6 @@ export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
 
   const handleSubmit = async (values: object, bag: FormikHelpers<object>) => {
     if (isLastStep) {
-      console.log('here')
       return onSubmit(values, bag)
     } else {
       bag.setTouched({})

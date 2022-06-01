@@ -29,6 +29,22 @@ type Step = {
   note?: string
 }
 
+type Registration = {
+  address: string
+  allergies?: string
+  dob: Date
+  email?: string
+  insurance: string
+  name: string
+  nick?: string
+  parent_address?: string
+  parent_email: string
+  parent_name: string
+  parent_phone: string
+  phone?: string
+  terms: boolean
+}
+
 type Layout = {
   sizing: {
     xs: number
@@ -46,6 +62,7 @@ type Layout = {
     formControl?: object
     textField?: object
     mask?: string
+    disableFuture?: boolean
   }
   inputVariant?: string
   options?: {
@@ -77,7 +94,13 @@ const steps: Step[] = [
         excludeEmptyString: true,
       }),
       insurance: Yup.string().required('Povinný údaj'),
-      dob: Yup.date().typeError('Toto není datum').required('Povinný údaj'),
+      dob: Yup.date()
+        .typeError('Toto není datum')
+        .required('Povinný údaj')
+        .max(
+          new Date(new Date().setFullYear(new Date().getFullYear() - 12)),
+          'Účastník musí být starší 12let'
+        ),
       allergies: Yup.string(),
     }),
     layout: [
@@ -168,6 +191,7 @@ const steps: Step[] = [
           mask: '__.__.____',
           openTo: 'year',
           views: ['year', 'month', 'day'],
+          disableFuture: true,
         },
       },
       {
@@ -255,7 +279,6 @@ const steps: Step[] = [
         component: CheckboxWithLabel,
         props: {
           id: 'terms',
-          fullWidth: true,
           type: 'checkbox',
           Label: {
             label:
@@ -289,7 +312,7 @@ const FieldValue = ({ id, label }: { id: string; label: string }) => {
 
   const value =
     field.value instanceof Date
-      ? field.value.toLocaleDateString()
+      ? field.value.toLocaleDateString('cs-CZ')
       : typeof field.value === 'string'
       ? field.value
       : undefined
@@ -302,6 +325,9 @@ const FieldValue = ({ id, label }: { id: string; label: string }) => {
   }
   return null
 }
+
+const localeDateToUtc = (date: Date) =>
+  new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
 
 const Form = ({ onSubmit }: { onSubmit: Function }) => (
   <LocalizationProvider dateAdapter={AdapterDateFns} locale={csLocale}>
@@ -405,10 +431,15 @@ const Jak = () => {
 
   const handleSubmit = (data: object) => {
     setShowWizard(false)
-    const sanitizedData = Object.entries(data).reduce(
+    const dataWithoutUndefined = Object.entries(data).reduce(
       (acc, [k, v]) => (v !== undefined ? { ...acc, [k]: v } : acc),
       {}
-    )
+    ) as Registration
+
+    const sanitizedData = {
+      ...dataWithoutUndefined,
+      dob: localeDateToUtc(dataWithoutUndefined.dob),
+    }
     addDoc(collection(getFirestore(), 'registrations'), sanitizedData)
   }
 

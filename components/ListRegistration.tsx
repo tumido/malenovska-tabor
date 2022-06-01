@@ -118,7 +118,10 @@ const Row = ({ row, onDeleteEntry }: RowProps) => {
                         Datum narození
                       </TableCell>
                       <TableCell>
-                        {(row.dob.toDate() as Date).toLocaleDateString()}
+                        {(row.dob.toDate() as Date).toLocaleDateString(
+                          'cs-CZ',
+                          { timeZone: 'UTC' }
+                        )}
                       </TableCell>
                     </TableRow>
                     <TableRow>

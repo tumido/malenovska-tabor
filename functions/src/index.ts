@@ -50,7 +50,7 @@ exports.onRegistration = functions.firestore
 
     data.dob = (data.dob as admin.firestore.Timestamp)
       .toDate()
-      .toLocaleDateString('cs-CZ')
+      .toLocaleDateString('cs-CZ', { timeZone: 'UTC' })
 
     const messages = [
       {
