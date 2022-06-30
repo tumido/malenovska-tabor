@@ -19,20 +19,22 @@ const Co = () => {
               tábor, tak je potřeba se dopravit po vlastní ose. Dotazy k dopravě
               směřujte na{' '}
               <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>{' '}
-              <Button
-                variant="text"
-                size="large"
-                href="https://www.facebook.com/SMRzakladna/"
-              >
-                Facebookové stránky základny
-              </Button>
-              <Button
-                variant="text"
-                size="large"
-                href="https://mapy.cz/s/gudulevape"
-              >
-                Mapy.cz
-              </Button>
+              <div>
+                <Button
+                  variant="text"
+                  size="large"
+                  href="https://www.facebook.com/SMRzakladna/"
+                >
+                  Facebookové stránky základny
+                </Button>
+                <Button
+                  variant="text"
+                  size="large"
+                  href="https://mapy.cz/s/gudulevape"
+                >
+                  Mapy.cz
+                </Button>
+              </div>
             </li>
             <li>
               Letos oproti minulým ročníkům jsme si pro Vás připravili vícedenní
