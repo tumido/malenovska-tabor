@@ -24,13 +24,18 @@ const Gdpr: NextPage = () => (
         Obecné
       </Typography>
       <Typography variant="body1">
-        Správcem osobních údajů členů je spolek Strážci Mezihoří, IČO: ______,
-        se sídlem ____, zapsaná ve spolkovém rejstříku vedeném u Městského soudu
-        v Praze oddíl ____, vložka ____ (dále též jen „Strážci Mezihoří“). Vaše
-        žádosti a dotazy týkající se zpracování osobních údajů přijmeme na
-        adrese tabor@malenovska.cz nebo písemně na adrese našeho sídla. Přístup
-        k osobním údajům účastníků tábora pořádaného Strážci Mezihoří má
-        odpovědný vedoucí tábora a členové Senátu Stážců Mezihoří
+        Správcem osobních údajů členů je spolek Strážci Mezihoří, IČO:{' '}
+        <Link href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1162823&typ=PLATNY">
+          17226953
+        </Link>
+        , se sídlem Ohradní 1337/9, Michle, 140 00 Praha 4, zapsaná ve spolkovém
+        rejstříku vedeném u Městského soudu v Praze oddíl L, vložka 76390 (dále
+        též jen „Strážci Mezihoří“). Vaše žádosti a dotazy týkající se
+        zpracování osobních údajů přijmeme na adrese{' '}
+        <Link href="mailto:tabor@malenovska.cz">tabor@malenovska.cz</Link> nebo
+        písemně na adrese našeho sídla. Přístup k osobním údajům účastníků
+        tábora pořádaného Strážci Mezihoří má odpovědný vedoucí tábora a členové
+        Senátu Stážců Mezihoří.
       </Typography>
       <Typography variant="h4" component="h2" gutterBottom>
         Registrace a evidence účastníků
