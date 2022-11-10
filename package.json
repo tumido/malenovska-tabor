@@ -21,7 +21,7 @@
     "react": "18.2.0",
     "react-csv": "2.2.2",
     "react-dom": "18.2.0",
-    "react-firebase-hooks": "5.0.3",
+    "react-firebase-hooks": "5.1.0",
     "react-step-wizard": "5.3.11",
     "yup": "0.32.11"
   },
