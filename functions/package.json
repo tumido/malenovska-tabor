@@ -19,7 +19,7 @@
     "firebase-functions": "4.2.1",
     "handlebars": "4.7.7",
     "nodemailer": "6.9.1",
-    "prettier": "2.8.3"
+    "prettier": "2.8.4"
   },
   "devDependencies": {
     "@types/nodemailer": "6.4.7",
