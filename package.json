@@ -23,7 +23,7 @@
     "react-dom": "18.2.0",
     "react-firebase-hooks": "5.1.1",
     "react-step-wizard": "5.3.11",
-    "yup": "0.32.11"
+    "yup": "1.0.0"
   },
   "devDependencies": {
     "@types/date-fns": "2.6.0",
