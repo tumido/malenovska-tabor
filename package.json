@@ -13,7 +13,7 @@
     "@emotion/styled": "11.10.6",
     "@mui/icons-material": "5.11.9",
     "@mui/lab": "5.0.0-alpha.120",
-    "@mui/material": "5.11.9",
+    "@mui/material": "5.11.10",
     "firebase": "9.17.1",
     "formik": "2.2.9",
     "formik-mui": "4.0.0",
