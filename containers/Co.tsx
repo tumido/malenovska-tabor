@@ -57,7 +57,7 @@ const Co = () => {
               Baterku nebo jinou svítilnu (doporučujeme čelovku)
               <br />
             </li>
-            <li>Termín: 21.8.2022 - 27.8.2022</li>
+            <li>Termín: 13.8.2022 - 20.8.2022</li>
             <li>Cena: 4300 Kč</li>
           </OrderedList>
         </Grid>
@@ -80,13 +80,28 @@ const Co = () => {
         organizátory. Ale není poetičtější napsat dopis?
       </Typography>
       <Typography variant="body1">
-        Děj našeho larpu se odehrává v malém, ale zdaleka ne bezvýznamném
-        městečku. Nachází se na obchodní stezce, takže přitahuje spoustu
-        bohatých, ale i divných lidí (a jiných bytostí). Někteří z vás zajisté
-        slyšeli kolovat legendy o tom, že město vyhledává spousta mágů. Někteří
-        z vás můžou ve měště již žít, některé může lákat vidina bohatství,
-        magicky nadané může lákat tajemno tohoto města. Ale taky můžete mít
-        motivaci pro příchod úplně jiný.
+        Děj našeho larpu pokračuje v malém, ale zdaleka ne bezvýznamném
+        městečku Mrsklesy. V příběhu budeme pokračovat tam, kde jsme minulý ročník skončili,
+        a to procesem se zloději. 
+        
+        Většina Vašich postav tudíž bude místních, můžete pokračovat v postavě z minula nebo si vytvořit
+        postavu novou. Letos budete mít přiřazenou i funkci ve městě, kterou si vyberete při registraci.
+        Na výběr máte:
+         <ul>
+    <li>Alchymista</li>
+    <li>Kovář</li>
+    <li>Kněz/správce chrámu</li>
+    <li>Hlídka</li>
+    <li>Bordelmamá</li>
+    <li>Bard</li>
+    <li>Mágové (lóže)</li>
+    <li>Farmář</li>
+    <li>Felčar</li>
+    <li>Lovec</li>
+  </ul>
+
+        
+        
       </Typography>
     </Container>
   )
