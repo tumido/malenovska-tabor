@@ -46,22 +46,22 @@ const Header = () => {
 
   const menu = (
     <>
-      <Link href="/#tabor" passHref>
+      <Link legacyBehavior href="/#tabor" passHref>
         <Button component="a" color="primary">
           Tábor
         </Button>
       </Link>
-      <Link href="/#org-tym" passHref>
+      <Link legacyBehavior href="/#org-tym" passHref>
         <Button component="a" color="primary">
           Organizátoři
         </Button>
       </Link>
-      <Link href="/#registrace" passHref>
+      <Link legacyBehavior href="/#registrace" passHref>
         <Button component="a" color="primary">
           Registrace
         </Button>
       </Link>
-      <Link href="/gdpr" passHref>
+      <Link legacyBehavior href="/gdpr" passHref>
         <Button component="a" color="primary">
           GDPR
         </Button>
@@ -72,7 +72,7 @@ const Header = () => {
   const menuLoggedIn = (
     <>
       {user && [
-        <Link href="/admin" passHref key="admin">
+        <Link legacyBehavior href="/admin" passHref key="admin">
           <Button component="a" color="primary">
             Administrace
           </Button>

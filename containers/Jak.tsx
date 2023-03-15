@@ -10,11 +10,11 @@ import {
 } from '@mui/material'
 import { Wizard, WizardStep } from '../components/Wizard'
 import { TextField, Select, CheckboxWithLabel } from 'formik-mui'
-import { DatePicker } from 'formik-mui-lab'
+import { DatePicker } from 'formik-mui-x-date-pickers'
 import * as Yup from 'yup'
 import { Field, useField, ErrorMessage } from 'formik'
-import { LocalizationProvider } from '@mui/lab'
-import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import csLocale from 'date-fns/locale/cs'
 import React, { MouseEventHandler, useState } from 'react'
 import { Box } from '@mui/system'
@@ -62,6 +62,7 @@ type Layout = {
     formControl?: object
     textField?: object
     mask?: string
+    slotProps?: Record<string, unknown>
     disableFuture?: boolean
   }
   inputVariant?: string
@@ -185,8 +186,14 @@ const steps: Step[] = [
         sizing: { xs: 4 },
         component: DatePicker,
         props: {
-          textField: { variant: 'standard', fullWidth: true },
-          label: 'Datum narození',
+          type: 'date',
+          slotProps: {
+            textField: {
+              variant: 'standard',
+              fullWidth: true,
+              label: 'Datum narození',
+            },
+          },
           id: 'dob',
           mask: '__.__.____',
           openTo: 'year',
@@ -382,7 +389,7 @@ const Form = ({ onSubmit }: { onSubmit: Function }) => (
                       </MenuItem>
                     ))}
                   </Field>
-                  {f.props.type === 'checkbox' && (
+                  {['checkbox', 'date'].includes(f.props.type || '') && (
                     <ErrorMessage name={f.props.id}>
                       {(msg) => (
                         <FormHelperText error={true}>{msg}</FormHelperText>
