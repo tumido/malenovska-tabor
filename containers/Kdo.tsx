@@ -26,7 +26,7 @@ const people = [
     desc: 'Já jsem Luke, i když poslední dobou mi kamarádi začali říkat "Krtečku", tak slyším na oboje. K dřevárně jsem se dostal tak, že mě jednou spolužák pozval, ať s nima jdu do parku šermovat. A doistal jsem tam dvě věci. Za prvé takovou bídu, že mi natekl loket a já skoro nemohl hýbat rukou. A za druhé pozvání na Helmáč. A tam jsem se do celé té záležitosti kolem LARPú, bitev, zpívání u ohně a neuvěřitelných lidí ze skupiny zamiloval tak, že už si ani nedokážu představit, že bych se toho měl vzdát. A o něco později už přišlo jenom "Hej, pojeď s náma dělat tábor." A tak teď dělám tábor a doufám, že se nám podaří nadchnout mladé lidi tak, jak to před lety nadchlo mě.',
   },
   {
-    avatar: '/mysak.jpg',
+    avatar: '/dorian.jpg',
     nick: 'Dorian',
     name: 'Michal Roth',
     role: 'Vedoucí',
