@@ -8,6 +8,7 @@ import {
   Stepper,
   Box,
   Button,
+  Typography,
 } from '@mui/material'
 
 type WizardProps = {
@@ -57,7 +58,9 @@ export const Wizard = ({ children, initialValues, onSubmit }: WizardProps) => {
           <Stepper activeStep={stepNumber} orientation="vertical">
             {steps.map((step, index) => (
               <Step key={step.props.label}>
-                <StepLabel optional={step.props.description}>
+                <StepLabel optional={
+                  <Typography variant="caption">{step.props.description}</Typography>
+                  }>
                   {step.props.label}
                 </StepLabel>
                 <StepContent>
