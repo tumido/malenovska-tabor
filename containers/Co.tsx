@@ -1,7 +1,20 @@
-import { Grid, Typography, Container, Button, Link } from '@mui/material'
+import { Grid, Typography, Container, Button, Link, Card } from '@mui/material'
 import Logo from '../components/Logo'
 import OrderedList from '../components/OrderedList'
 import Image from '../components/Image'
+
+const classes = [
+  'Alchymista',
+  'Kovář',
+  'Kněz/správce chrámu',
+  'Hlídka (3+)',
+  'Představená Cechu švadlen a šiček',
+  'Bard',
+  'Mágové z lóže (3x)',
+  'Farmář',
+  'Felčar',
+  'Lovec',
+]
 
 const Co = () => {
   return (
@@ -13,10 +26,10 @@ const Co = () => {
         <Grid item xs={12} lg={6}>
           <OrderedList>
             <li>
-              Tradiční Larpový tábor pro účastníky ze všech koutků ČR. Tábor letos opět proběhne na Křekově u Valašských
-              Klobouk. Bohužel nejsme schopni zajistit hromadnou dopravu na
-              tábor, tak je potřeba se dopravit po vlastní ose. Dotazy k dopravě
-              směřujte na{' '}
+              Tradiční Larpový tábor pro účastníky ze všech koutků ČR. Tábor
+              letos opět proběhne na Křekově u Valašských Klobouk. Bohužel
+              nejsme schopni zajistit hromadnou dopravu na tábor, tak je potřeba
+              se dopravit po vlastní ose. Dotazy k dopravě směřujte na{' '}
               <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>{' '}
               <div>
                 <Button
@@ -36,10 +49,10 @@ const Co = () => {
               </div>
             </li>
             <li>
-              Letos budeme pokračovat v tradici a připravili jsme pokračování vícedenního
-              LARPu, na který od Vás potřebujeme, abyste si připrvili vlastní
-              postavy. S postavama Vám pomůže Vydra, můžete ho kontaktovat na
-              FB, Discordu nebo na emailu{' '}
+              Letos budeme pokračovat v tradici a připravili jsme pokračování
+              vícedenního LARPu, na který od Vás potřebujeme, abyste si
+              připrvili vlastní postavy. S postavama Vám pomůže Vydra, můžete ho
+              kontaktovat na FB, Discordu nebo na emailu{' '}
               <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>
               . Abyste vědeli, co Vás čeká, zde je počáteční info, kde se bude
               LARP odehrávat
@@ -70,40 +83,49 @@ const Co = () => {
         </Grid>
       </Grid>
       <Typography variant="body1" gutterBottom sx={{ mt: 2 }}>
-        Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí (ti co nebyli loni).
-        Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci
-        Valašska. Na základně je tekoucí pitná voda, sprcha, splachovací WC.
-        Ubytování je ve stanech s podsadou a postelemi, nicméně je nutné si vzít
-        dobrý spacák, na konci srpna už může být v noci zima. Doporučujeme si
-        taky vzít karimatku pro případné spaní venku. Na základně je elektřina
-        pouze v organizátorské chatě, ke které účastníci mají přístup výjimečně.
-        Samozřejmě bude možnost nabít telefony na konci tábora, abyste se mohli
-        domluvit na odjezdu, ale z naší zkušenosti telefony na táboře jsou spíše
-        na škodu. V průběhu tábora bude možné kontaktovat organizátory, stejně
-        tak účastníci budou mít možnost kontaktovat své rodiče přes
-        organizátory. Ale není poetičtější napsat dopis?
+        Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí (ti
+        co nebyli loni). Základna se nachází u lesa u obce Křekov, v malebné
+        přírodě v srdci Valašska. Na základně je tekoucí pitná voda, sprcha,
+        splachovací WC. Ubytování je ve stanech s podsadou a postelemi, nicméně
+        je nutné si vzít dobrý spacák, na konci srpna už může být v noci zima.
+        Doporučujeme si taky vzít karimatku pro případné spaní venku. Na
+        základně je elektřina pouze v organizátorské chatě, ke které účastníci
+        mají přístup výjimečně. Samozřejmě bude možnost nabít telefony na konci
+        tábora, abyste se mohli domluvit na odjezdu, ale z naší zkušenosti
+        telefony na táboře jsou spíše na škodu. V průběhu tábora bude možné
+        kontaktovat organizátory, stejně tak účastníci budou mít možnost
+        kontaktovat své rodiče přes organizátory. Ale není poetičtější napsat
+        dopis?
       </Typography>
       <Typography variant="body1">
         Děj našeho larpu se odehrává v malém, ale zdaleka ne bezvýznamném
-        městečku Mrsklesy. Nachází se na obchodní stezce, takže přitahuje spoustu
-        bohatých, ale i divných lidí (a jiných bytostí). Letos jsme si pro vás připravili role
-        ve městě, které budou vaše postavy vykonávat, ale samozřejmě můžete mít spousty dalších cílů.
-        Tyto role jsou:
-         <ul>
-    <li>Alchymista</li>
-    <li>Kovář</li>
-    <li>Kněz/správce chrámu</li>
-    <li>Hlídka (3+)</li>
-    <li>Představená Cechu švadlen a šiček</li>
-    <li>Bard</li>
-    <li>Mágové z lóže (3x)</li>
-    <li>Farmář</li>
-    <li>Felčar</li>
-    <li>Lovec</li>
-  </ul>
-        
-
+        městečku Mrsklesy. Nachází se na obchodní stezce, takže přitahuje
+        spoustu bohatých, ale i divných lidí (a jiných bytostí). Letos jsme si
+        pro vás připravili role ve městě, které budou vaše postavy vykonávat,
+        ale samozřejmě můžete mít spousty dalších cílů. Tyto role jsou:
       </Typography>
+      <Grid
+        sx={{ mt: 2 }}
+        container
+        spacing={2}
+        alignItems="center"
+        justifyContent="center"
+      >
+        {classes.map((c) => (
+          <Grid item key={c}>
+            <Card
+              sx={{
+                p: 3,
+                m: 0,
+                background: (t) => t.palette.primary.main,
+                color: (t) => t.palette.primary.contrastText,
+              }}
+            >
+              {c}
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   )
 }

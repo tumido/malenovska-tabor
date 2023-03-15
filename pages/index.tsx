@@ -21,7 +21,7 @@ const Home: NextPage = () => (
     <CssBaseline />
     <Head>
       <title>Larpový tábor</title>
-      <meta name="description" content="Tábor v mezihoří" />
+      <meta name="description" content="Tábor v Mezihoří" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
