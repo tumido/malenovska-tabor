@@ -11,7 +11,7 @@ E-mail: {{email}}
 Telefon: {{phone}}
 Adresa: {{address}}
 Datum narození: {{dob}}
-Alerie: {{allergies}}
+Alergie: {{allergies}}
 Pojišťovna: {{insurance}}
 
 Rodič:

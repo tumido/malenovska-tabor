@@ -13,8 +13,7 @@ const Co = () => {
         <Grid item xs={12} lg={6}>
           <OrderedList>
             <li>
-              Tradiční Larpový tábor pro účastníky ze všech koutků ČR se letos
-              přesouvá na novou základnu. Tábor proběhne na Křekově u Valašských
+              Tradiční Larpový tábor pro účastníky ze všech koutků ČR. Tábor letos opět proběhne na Křekově u Valašských
               Klobouk. Bohužel nejsme schopni zajistit hromadnou dopravu na
               tábor, tak je potřeba se dopravit po vlastní ose. Dotazy k dopravě
               směřujte na{' '}
@@ -37,8 +36,8 @@ const Co = () => {
               </div>
             </li>
             <li>
-              Letos oproti minulým ročníkům jsme si pro Vás připravili vícedenní
-              LARP, na který od Vás potřebujeme, abyste si připrvili vlastní
+              Letos budeme pokračovat v tradici a připravili jsme pokračování vícedenního
+              LARPu, na který od Vás potřebujeme, abyste si připrvili vlastní
               postavy. S postavama Vám pomůže Vydra, můžete ho kontaktovat na
               FB, Discordu nebo na emailu{' '}
               <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>
@@ -62,7 +61,7 @@ const Co = () => {
               Baterku nebo jinou svítilnu (doporučujeme čelovku)
               <br />
             </li>
-            <li>Termín: 20.8.2022 - 27.8.2022</li>
+            <li>Termín: 13.8.2023 - 20.8.2023</li>
             <li>Cena: 4300 Kč</li>
           </OrderedList>
         </Grid>
@@ -71,7 +70,7 @@ const Co = () => {
         </Grid>
       </Grid>
       <Typography variant="body1" gutterBottom sx={{ mt: 2 }}>
-        Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí.
+        Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí (ti co nebyli loni).
         Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci
         Valašska. Na základně je tekoucí pitná voda, sprcha, splachovací WC.
         Ubytování je ve stanech s podsadou a postelemi, nicméně je nutné si vzít
@@ -86,12 +85,24 @@ const Co = () => {
       </Typography>
       <Typography variant="body1">
         Děj našeho larpu se odehrává v malém, ale zdaleka ne bezvýznamném
-        městečku. Nachází se na obchodní stezce, takže přitahuje spoustu
-        bohatých, ale i divných lidí (a jiných bytostí). Někteří z vás zajisté
-        slyšeli kolovat legendy o tom, že město vyhledává spousta mágů. Někteří
-        z vás můžou ve měště již žít, některé může lákat vidina bohatství,
-        magicky nadané může lákat tajemno tohoto města. Ale taky můžete mít
-        motivaci pro příchod úplně jiný.
+        městečku Mrsklesy. Nachází se na obchodní stezce, takže přitahuje spoustu
+        bohatých, ale i divných lidí (a jiných bytostí). Letos jsme si pro vás připravili role
+        ve městě, které budou vaše postavy vykonávat, ale samozřejmě můžete mít spousty dalších cílů.
+        Tyto role jsou:
+         <ul>
+    <li>Alchymista</li>
+    <li>Kovář</li>
+    <li>Kněz/správce chrámu</li>
+    <li>Hlídka (3+)</li>
+    <li>Představená Cechu švadlen a šiček</li>
+    <li>Bard</li>
+    <li>Mágové z lóže (3x)</li>
+    <li>Farmář</li>
+    <li>Felčar</li>
+    <li>Lovec</li>
+  </ul>
+        
+
       </Typography>
     </Container>
   )
