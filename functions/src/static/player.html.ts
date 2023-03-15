@@ -28,7 +28,7 @@ export default `
         <td>{{dob}}</td>
     </tr>
     <tr>
-        <td>Alerie</td>
+        <td>Alergie</td>
         <td>{{allergies}}</td>
     </tr>
     <tr>

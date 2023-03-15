@@ -10,7 +10,7 @@ Přezdívka: {{nick}}
 E-mail: {{email}}
 Telefon: {{phone}}
 Datum narození: {{dob}}
-Alerie: {{allergies}}
+Alergie: {{allergies}}
 Adresa: {{address}}
 Pojišťovna: {{insurance}}
 
