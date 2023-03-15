@@ -194,6 +194,7 @@ const steps: Step[] = [
               label: 'Datum narození',
             },
           },
+          label: 'Datum narození',
           id: 'dob',
           mask: '__.__.____',
           openTo: 'year',
