@@ -13,8 +13,8 @@ const Co = () => {
         <Grid item xs={12} lg={6}>
           <OrderedList>
             <li>
-              Tradiční Larpový tábor pro účastníky ze všech koutků ČR se letos
-              přesouvá na novou základnu. Tábor proběhne na Křekově u Valašských
+              Tradiční Larpový tábor pro účastníky ze všech koutků ČR bude letos opět
+              na nové základně. Tábor proběhne na Křekově u Valašských
               Klobouk
               <Button
                 variant="text"
@@ -32,8 +32,7 @@ const Co = () => {
               </Button>
             </li>
             <li>
-              Letos oproti minulým ročníkům jsme si pro Vás připravili vícedenní
-              LARP, na který od Vás potřebujeme, abyste si připrvili vlastní
+              Letos budeme pokračovat ve vícedenním LARPu, na který od Vás potřebujeme, abyste si připrvili vlastní
               postavy. S postavama Vám pomůže Vydra, můžete ho kontaktovat na
               FB, Discordu nebo na emailu{' '}
               <Link href="mailto:vydra@malenovska.cz">vydra@malenovska.cz</Link>
@@ -66,8 +65,8 @@ const Co = () => {
         </Grid>
       </Grid>
       <Typography variant="body1" gutterBottom>
-        Letošní tábor se bude konat v trochu jiném středisku než jste zvyklí.
-        Základna se nachází u lesa u obce Křekov, v malebné přírodě v srdci
+        Letošní tábor se opět bude kona na nové základně,
+        která se nachází u lesa u obce Křekov, v malebné přírodě v srdci
         Valašska. Na základně je tekoucí pitná voda, sprcha, splachovací WC.
         Ubytování je ve stanech s podsadou a postelemi, nicméně je nutné si vzít
         dobrý spacák, na konci srpna už může být v noci zima. Doporučujeme si
@@ -92,7 +91,7 @@ const Co = () => {
     <li>Kovář</li>
     <li>Kněz/správce chrámu</li>
     <li>Hlídka</li>
-    <li>Bordelmamá</li>
+    <li>Představená cechu švadlen a šiček</li>
     <li>Bard</li>
     <li>Mágové (lóže)</li>
     <li>Farmář</li>
