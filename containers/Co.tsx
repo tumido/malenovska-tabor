@@ -61,7 +61,7 @@ const Co = () => {
               Baterku nebo jinou svítilnu (doporučujeme čelovku)
               <br />
             </li>
-            <li>Termín: 20.8.2022 - 27.8.2022</li>
+            <li>Termín: 13.8.2023 - 20.8.2023</li>
             <li>Cena: 4300 Kč</li>
           </OrderedList>
         </Grid>
