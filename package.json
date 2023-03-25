@@ -36,7 +36,7 @@
     "eslint-config-prettier": "8.8.0",
     "firebase-tools": "11.25.1",
     "next": "13.2.4",
-    "prettier": "2.8.6",
+    "prettier": "2.8.7",
     "typescript": "5.0.2"
   },
   "eslintConfig": {
