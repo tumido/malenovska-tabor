@@ -14,7 +14,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@types/node": "18.15.10",
+    "@types/node": "18.15.11",
     "eslint-config-prettier": "8.8.0",
     "firebase-admin": "11.5.0",
     "firebase-functions": "4.2.1",
