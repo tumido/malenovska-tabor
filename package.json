@@ -15,7 +15,7 @@
     "@mui/lab": "5.0.0-alpha.124",
     "@mui/material": "5.11.15",
     "@mui/x-date-pickers": "6.0.4",
-    "firebase": "9.18.0",
+    "firebase": "9.19.1",
     "formik": "2.2.9",
     "formik-mui": "5.0.0-alpha.0",
     "formik-mui-x-date-pickers": "0.0.1",
@@ -37,7 +37,7 @@
     "firebase-tools": "11.25.2",
     "next": "13.2.4",
     "prettier": "2.8.7",
-    "typescript": "5.0.2"
+    "typescript": "5.0.3"
   },
   "eslintConfig": {
     "extends": [
