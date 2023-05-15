@@ -338,7 +338,7 @@ const localeDateToUtc = (date: Date) =>
   new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
 
 const Form = ({ onSubmit }: { onSubmit: Function }) => (
-  <LocalizationProvider dateAdapter={AdapterDateFns} locale={csLocale}>
+  <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={csLocale}>
     <Wizard initialValues={initialValues} onSubmit={onSubmit}>
       {steps.map((s) => (
         <WizardStep
