@@ -15,4 +15,5 @@ export type Registration = {
   parent_email: string
   parent_phone: string
   terms: boolean
+  email_phase?: string
 }
