@@ -15,7 +15,7 @@
     "@mui/lab": "5.0.0-alpha.134",
     "@mui/material": "5.13.5",
     "@mui/x-date-pickers": "6.7.0",
-    "firebase": "9.22.2",
+    "firebase": "10.14.1",
     "formik": "2.4.1",
     "formik-mui": "5.0.0-alpha.0",
     "formik-mui-x-date-pickers": "0.0.1",
